@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\User;
 
 return new class extends Migration
 {
@@ -20,6 +21,15 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        
+        User::create(['name' => 'Gazsi', 'email' => 'gazsi@gmail.com', 
+        'email_verified_at'=> '2020-02-20',
+        'password'=>'Aa123456@']);
+        User::create(['name' => 'Pista', 'email' => 'Pista@gmail.com', 
+        'email_verified_at'=> '2020-08-20',
+        'password'=>'Aa123456@']);
+
     }
 
     /**
