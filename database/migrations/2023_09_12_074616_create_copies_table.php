@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Copy;
 
 return new class extends Migration
 {
@@ -17,6 +18,13 @@ return new class extends Migration
             $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });
+
+        Copy::create(["book_id" => 1, ["user_id"] => 1]);
+        Copy::create(["book_id" => 2, ["user_id"] => 2]);
+        Copy::create(["book_id" => 3, ["user_id"] => 2]);
+        Copy::create(["book_id" => 4, ["user_id"] => 2]);
+        Copy::create(["book_id" => 4, ["user_id"] => 1]);
+        Copy::create(["book_id" => 2, ["user_id"] => 1]);
     }
 
     /**
