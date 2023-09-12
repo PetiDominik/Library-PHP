@@ -1,9 +1,9 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\User;
 
 return new class extends Migration
 {
@@ -30,6 +30,10 @@ return new class extends Migration
         'email_verified_at'=> '2020-08-20',
         'password'=>'Aa123456@']);
 
+        
+
+        User::create(["name" => "Ernő", "email" => "er@no.com", "email_verified_at" => "2023-05-05", "password" => "Aa123456@"]);
+        User::create(["name" => "Béla", "email" => "be@la.com", "email_verified_at" => "2023-05-06", "password" => "Aa123456@"]);
     }
 
     /**
